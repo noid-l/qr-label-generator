@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 技术栈
 
 - **框架**: Vue 3.5 (Composition API + `<script setup>`)
-- **构建工具**: Vite 7
+- **构建工具**: Vite 8 (Rolldown)
 - **UI 组件**: @headlessui/vue 1（TabGroup 等无样式组件）
 - **样式**: Tailwind CSS 4（通过 `@tailwindcss/vite` 插件集成，自定义组件层在 `style.css`）
 - **二维码**: qrcode.vue 3
@@ -84,8 +84,8 @@ App.vue (根组件, Headless UI TabGroup 四标签页: 文本 / URL / WiFi / 名
 `vite.config.ts`：
 - 路径别名 `@` → `./src`
 - 插件：`@vitejs/plugin-vue` + `@tailwindcss/vite`
-- manualChunks: `vue-vendor`（vue + pinia）分离打包
-- terser 压缩，不生成 sourcemap
+- rolldownOptions.codeSplitting: `vue-vendor`（vue + pinia）分离打包
+- Rolldown 内置压缩，不生成 sourcemap
 
 `tsconfig.app.json`：
 - `strict: true`, `noUnusedLocals: true`, `noUnusedParameters: true`

@@ -11,7 +11,15 @@
       "mcp__plugin_github_github__create_repository",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__plugin_context7_context7__query-docs",
+      "Bash(bun add:*)",
+      "Bash(bun remove:*)",
+      "mcp__fetch__fetch"
     ]
   }
 }

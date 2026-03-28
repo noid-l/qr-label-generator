@@ -17,12 +17,16 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
     // Cloudflare Pages 兼容性配置
-    rollupOptions: {
+    rolldownOptions: {
       output: {
-        manualChunks: {
-          'vue-vendor': ['vue', 'pinia']
+        codeSplitting: {
+          groups: [
+            {
+              name: 'vue-vendor',
+              test: /node_modules\/(vue|pinia)/,
+            }
+          ]
         }
       }
     }
