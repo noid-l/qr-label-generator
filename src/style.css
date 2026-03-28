@@ -1,0 +1,144 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+  font-family: 'Avenir Next', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Noto Sans SC', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(250, 204, 21, 0.12), transparent 24%),
+    linear-gradient(180deg, #f8fafc 0%, #eef5ff 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --app-border: rgba(148, 163, 184, 0.24);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: inherit;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+  #app {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .panel-card {
+    @apply rounded-[28px] border border-slate-200/80 bg-white/85 shadow-[0_24px_60px_-32px_rgba(15,23,42,0.35)] backdrop-blur;
+  }
+
+  .panel-title {
+    @apply text-lg font-semibold text-slate-900;
+  }
+
+  .panel-subtitle {
+    @apply text-sm text-slate-500;
+  }
+
+  .field-label {
+    @apply mb-2 block text-sm font-semibold text-slate-700;
+  }
+
+  .input-base {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-4 focus:ring-teal-100 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400;
+  }
+
+  .textarea-base {
+    @apply min-h-[220px] resize-y leading-6;
+  }
+
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition focus:outline-none disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-teal-700 text-white shadow-lg shadow-teal-700/20 hover:bg-teal-800 focus:ring-4 focus:ring-teal-200;
+  }
+
+  .btn-secondary {
+    @apply border border-slate-200 bg-white text-slate-700 shadow-sm hover:border-slate-300 hover:bg-slate-50 focus:ring-4 focus:ring-slate-200;
+  }
+
+  .btn-success {
+    @apply bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 hover:bg-emerald-700 focus:ring-4 focus:ring-emerald-200;
+  }
+
+  .tag-chip {
+    @apply inline-flex items-center rounded-full bg-sky-100 px-2.5 py-1 text-xs font-semibold text-sky-700;
+  }
+
+  .number-input {
+    @apply flex w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm;
+  }
+
+  .number-input-step {
+    @apply flex h-11 w-11 shrink-0 items-center justify-center bg-slate-50 text-slate-700 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:text-slate-300;
+  }
+
+  .number-input-step:first-child {
+    @apply border-r border-slate-200;
+  }
+
+  .number-input-step:last-child {
+    @apply border-l border-slate-200;
+  }
+
+  .number-input-field {
+    @apply w-full min-w-0 border-0 px-3 py-3 text-center text-sm font-medium outline-none [appearance:textfield] focus:ring-0;
+  }
+
+  .number-input-field::-webkit-outer-spin-button,
+  .number-input-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .help-copy h2 {
+    @apply text-2xl font-semibold text-slate-900;
+  }
+
+  .help-copy h3 {
+    @apply mt-8 text-lg font-semibold text-slate-800;
+  }
+
+  .help-copy p,
+  .help-copy li {
+    @apply text-sm leading-7 text-slate-600;
+  }
+
+  .help-copy ol,
+  .help-copy ul {
+    @apply mt-3 space-y-2 pl-5;
+  }
+
+  .help-copy pre {
+    @apply mt-4 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-950 px-4 py-3 text-sm text-slate-100;
+  }
+
+  .help-copy code {
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+}
